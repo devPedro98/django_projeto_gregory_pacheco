@@ -11,8 +11,9 @@
     <h2>Listagem</h2>
     <ul>
     {% for transacaokk in transacoes %}
-       <li>{{transacaokk.descricao}} - {{transacaokk.data}} - R${{transacaokk.valor}} - {{ transacaokk.categoria }} <button><a href="{% url 'url_create' %}" style="text-decoration:none">Novo</a></button> <button><a href="{% url 'url_update' transacaokk.id %}" style="text-decoration:none">Editar</a></button></li>
+       <li>{{transacaokk.descricao}} - {{transacaokk.data}} - R${{transacaokk.valor}} - {{ transacaokk.categoria }} <button><a href="{% url 'url_update' transacaokk.id %}" style="text-decoration:none">Editar</a></button><button><a href="{% url 'url_delete' transacaokk.id %}" style="text-decoration:none">Deletar</a></button></li>
     {% endfor %}
+    <button><a href="{% url 'url_create' %}" style="text-decoration:none">Novo</a></button>
     </ul>
     
 </body>
