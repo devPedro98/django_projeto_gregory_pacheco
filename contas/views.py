@@ -28,3 +28,14 @@ def nova_transacao(request):
         return redirect('/')
     data['form'] = form
     return render(request, 'contas/html/forms.html', data)
+
+
+def update(request, pk):
+    data = {}
+    transacao = Transacao.objects.get(pk=pk)
+    form = TransacaoForm(request.POST or None, instance=transacao)
+    if form.is_valid():
+        form.save()
+        return redirect('/')
+    data['form'] = form
+    return render(request, 'contas/html/forms.html', data)
