@@ -7,11 +7,13 @@
     <title>Listagem</title>
 </head>
 <body>
+    <header><a href="admin/">Pagina administrativa</a></header>
     <h2>Listagem</h2>
     <ul>
     {% for transacaokk in transacoes %}
        <li>{{transacaokk.descricao}} - {{transacaokk.data}} - R${{transacaokk.valor}} - {{ transacaokk.categoria }}</li>
     {% endfor %}
     </ul>
+    <a href="{% url 'url_nova' %}">Novo</a>
 </body>
 </html>
